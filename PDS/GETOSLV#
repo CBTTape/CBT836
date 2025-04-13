@@ -1,0 +1,39 @@
+Get current operating system version
+
+PROBLEM ADDRESSED
+
+In situations where operating systems are being installed and
+tested, the problem sometimes arises of the current operating
+system version having to be identified in order to adapt jobs
+appropriately. This functionality can also be required when an
+application has to adapt its processing depending on the
+operating system currently running.
+
+SOLUTION
+
+The GETOSLVL program obtains the current operating system version
+and release from the Extended Communications Vector Table (ECVT).
+
+The program displays this information (for simplicity the TPUT
+service is used; this means that the display is made only in TSO
+the WTO service with routing code 11 could be used to output the
+display on the job log). The program returns a hash code formed
+from the operating system name, the version, and the release. The
+application can use this returned hash code to perform the
+appropriate processing.
+
+EXAMPLES
+
+The following list shows the output for some recent operating systems:
+  Hash code for OS/390 V2.8: 1819 (X'71B'):
+OS/39Ø Ø2Ø8ØØ
+  Hash code for OS/390 V2.10: 1555 (X'613'):
+OS/39Ø Ø21ØØØ
+  Hash code for z/OS V1.2: 3968 (X'F80'):
+z/OS Ø1Ø2ØØ
+  Hash code for z/OS V2.5: 3972 (X'F84'):
+z/OS Ø2Ø5ØØ
+
+The hash code is a numeric value within the range 0-4095 that the
+program sets as a return code.
+

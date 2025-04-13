@@ -1,0 +1,29 @@
+)ATTR
+_ TYPE(INPUT)   INTENS(HIGH) COLOR(YELLOW)
+% TYPE(TEXT)    COLOR(RED)
+* TYPE(TEXT)    COLOR(BLUE)
++ TYPE(TEXT)    COLOR(WHITE)
+# TYPE(OUTPUT)  INTENS(HIGH) COLOR(GREEN)
+? TYPE(OUTPUT)  INTENS(LOW) COLOR(BLUE)
+@ TYPE(OUTPUT)  COLOR(RED)
+)BODY WINDOW(48,12)
++
+%COMMAND ===>_ZCMD      %   SCROLL ===>_AMT   +
++
++
++    PR/SM Machine:                #z*
++    Serial Enabled Machine:       #z*
++    ESCA Processor:               #z*
++    Switch in Processor:          #z*
++    Partition Number:             #z *
++    No Of Extended Storage Slots  #z    *
++    In The current partition:
+%
+)INIT
+.ZVARS= '(prsmp,sem,escap,swtchp,partnum,noestor)'
+&ZCMD= ' '
+&ZWINTTL=  'Processor Information'
+)REINIT
+&ZCMD= ' '
+)PROC
+)END

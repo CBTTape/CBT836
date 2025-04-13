@@ -1,0 +1,34 @@
+)ATTR
+* TYPE(INPUT)   INTENS(HIGH) COLOR(YELLOW)
+% TYPE(TEXT)    COLOR(GREEN)
++ TYPE(TEXT)    COLOR(WHITE)
+# TYPE(TEXT)    INTENS(HIGH) COLOR(BLUE)
+? TYPE(OUTPUT)  INTENS(HIGH) COLOR(RED)
+@ TYPE(OUTPUT)  COLOR(RED)
+)BODY WINDOW(48,12)
+%
+%COMMAND ===>*ZCMD      %   SCROLL ===>*AMT   +
++
++
+% Select one of the following options.
++
++    *z+  1.  LPAR Definition Details
++         2.  Processor Information
++         3.  Dynamic I/O Update Details
++         4.  I/O Configuration Details
++
+)INIT
+.ZVARS= '(poption)'
+&ZCMD= ' '
+.CURSOR= poption
+&poption= '_'
+&ZWINTTL=  'Main Panel'
+&check= '1,2,3,4'
+)REINIT
+&ZCMD= ' '
+&poption= '_'
+&ZWINTTL=  'Main Panel'
+.CURSOR= poption
+)PROC
+ver (&poption,listv,&check)
+)END

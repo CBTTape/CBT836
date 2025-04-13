@@ -1,0 +1,27 @@
+)ATTR
+_ TYPE(INPUT)   INTENS(HIGH) COLOR(YELLOW)
+% TYPE(TEXT)    COLOR(RED)
+* TYPE(TEXT)    COLOR(BLUE)
++ TYPE(TEXT)    COLOR(WHITE)
+# TYPE(OUTPUT)  INTENS(HIGH) COLOR(GREEN)
+? TYPE(OUTPUT)  INTENS(LOW) COLOR(BLUE)
+@ TYPE(OUTPUT)  COLOR(RED)
+)BODY WINDOW(50,10)
++
+%COMMAND ===>_ZCMD      %   SCROLL ===>_AMT   +
++
++
++ Current IODF Name:       #z                   *
++ IODF Suffix:             #z *
++ Token Information:
++    IODF Creation Date:   #z       *
++    IODF Creation Time:   #z       *
+%
+)INIT
+.ZVARS= '(ciodfnme,iodfsufx,iodfcd,iodfct)'
+&ZCMD= ' '
+&ZWINTTL=  'I/O Configuration Information'
+)REINIT
+&ZCMD= ' '
+)PROC
+)END

@@ -1,0 +1,33 @@
+)ATTR
+_ TYPE(INPUT)   INTENS(HIGH) COLOR(YELLOW)
+% TYPE(TEXT)    COLOR(RED)
++ TYPE(TEXT)    COLOR(GREEN)
+* TYPE(TEXT)    COLOR(WHITE)
+# TYPE(OUTPUT)  INTENS(HIGH) COLOR(GREEN)
+? TYPE(OUTPUT)  INTENS(HIGH) COLOR(BLUE)
+)BODY WINDOW(69,14)
+%COMMAND ===>_ZCMD                               %
+%                                        SCROLL ===>_AMT +
+%
+* Time Slice:                #z  %
+* No Of Physical Processors  #z %
+* Required For PR/SM Use:
+*
+* Partition  Partition  No Of Logical   Relative  Wait        Capped
+* Name       No         CPUs Assigned   SHR       Completion
+%
+)MODEL
+ #z       % #z  %      #z  %           #z    %    #z%         #z%
+)INIT
+.ZVARS= '(timeslce,phyproc,partname,partno,logcpus,relshr, +
+wcompl,capped)'
+&ZCMD=    ' '
+.CURSOR= ZCMD
+&DALCSEL= '_'
+&ZWINTTL= 'LPAR Definitions'
+)REINIT
+&ZCMD= ' '
+&DALCSEL= '_'
+.CURSOR= ZCMD
+)PROC
+)END

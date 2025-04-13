@@ -1,0 +1,27 @@
+)ATTR
+_ TYPE(INPUT)   INTENS(HIGH) COLOR(YELLOW)
+% TYPE(TEXT)    COLOR(RED)
+* TYPE(TEXT)    COLOR(BLUE)
++ TYPE(TEXT)    COLOR(WHITE)
+# TYPE(OUTPUT)  INTENS(HIGH) COLOR(GREEN)
+? TYPE(OUTPUT)  INTENS(LOW) COLOR(BLUE)
+@ TYPE(OUTPUT)  COLOR(RED)
+)BODY WINDOW(48,10)
++
+%COMMAND ===>_ZCMD      %   SCROLL ===>_AMT   +
++
++
++  Configuration Updated Since Last IPL:    #z*
++  Dynamic I/O Enabled:                     #z*
++  System IPLed via IODF:                   #z*
++  I/O Config Info Valid:                   #z*
++  Configuration Update Actually Performed: #z*
+%
+)INIT
+.ZVARS= '(cuipl,dioe,iodfipl,iocval,updperf)'
+&ZCMD= ' '
+&ZWINTTL=  'Dynamic I/O Update Information'
+)REINIT
+&ZCMD= ' '
+)PROC
+)END
